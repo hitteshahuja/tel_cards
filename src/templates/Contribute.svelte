@@ -14,7 +14,9 @@
             </div>
             <p><strong>Alright! </strong>Thanks for making a suggestion. <a href="#" on:click="resetForm()">Click here to make another.</a></p>
         </div>
-        <form id="gform" on:submit="submitForm(event)">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfmavP82pvKKd-drfGB-ZvPhvkdVrPnDIA2IAVwWZuRdkK8ew/viewform?embedded=true" width="700" height="900" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+
+        <!--<form id="gform" on:submit="submitForm(event)">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="">
@@ -38,7 +40,7 @@
             <button type="submit" class="btn btn-block submitbutton">
                 Submit
             </button>
-        </form>                        
+        </form>   -->
     </div>
 </div>
 
@@ -56,7 +58,7 @@
 
             // Submits the form data to be captured by google doc
             submitForm(event) {
-                const remoteURL = "https://script.google.com/macros/s/AKfycbwdPK1Xn_XdIKYYnMLltp6u51nGpuRltLkwPvMUyLmMY1biPhpz/exec"
+                const remoteURL = "https://docs.google.com/forms/d/1IImCyszQvScFu0T2KxquFwVeGhTFdgENQDoEWDIu3rQ/formResponse"
 
                 const isValidEmail = email => {
                     const re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
@@ -67,6 +69,7 @@
 
                 const getFormData = () => {
                     const elements = document.getElementById("gform").elements // all form elements
+                    console.log(elements);
                     const fields = Object.keys(elements).map(k => {
                         if (elements[k].name !== undefined) {
                             return elements[k].name
@@ -111,11 +114,11 @@
                     if (isBot(data.honeypot)) return false  //if honeypot field is filled, form will not be submitted
 
                     if (!isValidEmail(data.email)) {   // if email is not valid show error
-                        document.getElementById("Email").style.display = 'block'
+                        document.getElementById("email").style.display = 'block'
                         return false
                     } else {
                         const xhr = new XMLHttpRequest()
-                        xhr.open('POST', remoteURL)
+                        xhr.open('POST', remoteURL,true)
                         // xhr.withCredentials = true
                         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
                         xhr.onreadystatechange = function() {
