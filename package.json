@@ -5,13 +5,16 @@
   "main": "main.js",
   "scripts": {
     "build": "parcel build src/index.html --public-url ./ && yarn copy:iframe_index",
-    "copy:iframe_index": "cp src/iframe_index.html dist/iframe_index.html",
+    "copy:iframe_index": "copyfiles src/iframe_index.html dist/iframe_index.html",
     "start": "parcel src/index.html",
     "deploy": "npm run build && ./deploy.sh"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "copyfiles": "^2.0.0",
+    "yarn": "^1.6.0"
+  },
   "devDependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
