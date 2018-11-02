@@ -1,9 +1,12 @@
 <div class="col-md-12">
 	<div class="card mainCard">
 		<div class="card-header" role="navigation">
-			<ul class="nav nav-tabs card-header-tabs justify-content-center">
+			<ul class="nav nav-tabs card-header-tabs justify-content-center ">
 				<li class="nav-item">
-					<a class="nav-link {{ $currentPage === 'card' ? 'active' : ''}}" id="app-tab" href="#appgenerator" on:click="store.set({ currentPage: 'card' })"><i class="fa fa-magic" aria-hidden="true"></i></a>
+					<a class="nav-link {{ $currentPage === 'default' ? ' show' : ''}}" id="default-tab" href="#appgenerator" on:click="store.set({ currentPage: 'default' })"><i class="fa fa-paperclip" aria-hidden="true"></i></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link {{ $currentPage === 'card' ? 'active show' : ''}}" id="app-tab" href="#appgenerator" on:click="store.set({ currentPage: 'card' })"><i class="fa fa-magic" aria-hidden="true"></i></a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link {{ $currentPage === 'catalogue' ? 'active show' : ''}}" id="catalogue-tab" href="#catalogue" on:click="store.set({ currentPage: 'catalogue' })"><i class="fa fa-bookmark-o" aria-hidden="true"></i></a>
@@ -17,6 +20,9 @@
 			</ul>
 		</div>
 		<div class="tab-content" id="myTabContent">
+			<div class="tab-pane fade {{ $currentPage === 'default' ? 'active show' : ''}}" id="appgenerator" role="tabpanel" aria-labelledby="app-tab">
+				<Default />
+			</div>
 			<div class="tab-pane fade {{ $currentPage === 'card' ? 'active show' : ''}}" id="appgenerator" role="tabpanel" aria-labelledby="app-tab">
 				<Card :card />
 			</div>
@@ -39,6 +45,7 @@
 	import "../css/font-awesome-animation.min.css"
 
 	// All the sub-templates
+	import Default from './Default.svelte'
 	import Card from './Card.svelte'
 	import Catalogue from './Catalogue.svelte'
 	import Contribute from './Contribute.svelte'
@@ -53,7 +60,8 @@
 
 		// Expose the templates as components that can be referened in this template
 		components: {
-			Card,
+			Default,
+		    Card,
 			Catalogue,
 			Contribute,
 			About,

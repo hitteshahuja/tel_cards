@@ -1,5 +1,5 @@
 export default [
-    
+
 
     {
         id: "google-classroom",
@@ -39,7 +39,7 @@ export default [
             extend: "Use the Classroom stream to set up discussion topics or create quick polls that engage students inbetween lessons."
         }
     },
-    
+
     {
         id: "gdocs",
         name: "Google Docs",
@@ -77,7 +77,7 @@ export default [
             extend: "Ask students to share their Google Doc and provide feedback by annotating and inserting comments that prompt further discussion or revisions to their original work."
         }
     },
-    
+
     {
         id: "medium",
         name: "Medium",
@@ -99,7 +99,7 @@ export default [
             "create",
             "check"
         ],
-        
+
         uses: [
             "Blogging",
             "Discussion",
@@ -117,7 +117,7 @@ export default [
             extend: "Set a reflective task that asks students to write their own posts, either keeping to the same topic or setting a new theme. Add their posts to a class publication."
         }
     },
-    
+
     {
         id: "mentimeter",
         name: "Mentimeter",
@@ -319,7 +319,7 @@ export default [
         description: "Snagit is an all-in-one tool for image and video capture, making it easy to create a variety of learning resources. For example, produce step-by-step tutorials, short introductory videos or annotated images. Snagit's integrated editor simplifies the process by providing a range of professional markup options.",
         colour: "#2C72B7",
         assets: {
-            logo: { 
+            logo: {
                 styles: "background-color: #2C72B7; background-size: 32px; background-position: 50% 25%; border: solid 3px #fff;",
                 image: require('./img/snagit.png')
             },
@@ -388,10 +388,11 @@ export default [
             extend: "Download the feedback report and identify areas which students had difficulty with. Use it to recap topics or inform future learning design."
         }
     },
-    
+
     {
         id: "zeetings",
         name: "Zeetings",
+        default: true,
         url: "https://www.zeetings.com",
         tagline: "Seamlessly combine slides, multimedia content, polls and Q&A features into interactive presentations.",
         description: "Zeetings helps to create engaging presentations by combining a range of interactive tools into one, easy to use interface. Add slides from existing decks or use Zeetings to create brand new presentations, quickly embedding videos, polls and surveys. A Zeeting is interactive, so share with students to receive real time feedback and live questions. With in-built analytics, responses are saved automatically to repurpose outside of the classroom.",
@@ -422,6 +423,46 @@ export default [
             title: "Lecturer in Midwifery"
         },
         videoURL: "https://www.youtube.com/embed/qKsY_083uOk?rel=0&amp;showinfo=0?&cc_load_policy=1",
+        framework: {
+            enhance: "Import a previous presentation (e.g. PowerPoint) and add some interactive slides that will test student's comprehension during the session.",
+            empower: "Introduce students to the Q&A feature. Ask them to pose questions anonymously and vote on which ones they think should be answered first.",
+            extend: "Use Zeetings' analytics feature to export all questions and allocate a revision task that requires students to present back an answer at the next class."
+        }
+    },
+    {
+        id: "moodle",
+        name: "Moodle",
+        default: true,
+        url: "https://moodle.bath.ac.uk",
+        tagline: "Moodle tagline goes here",
+        description: "Moodle description goes here",
+        colour: "#2BA0D8",
+        assets: {
+            logo: {
+                styles: "background-color: #343A40; background-size: 20px; background-position: 50% 50%;",
+                image: require('./img/zeetings.svg')
+            },
+            cover: {
+                styles: "",
+                image: require('./img/zeetings_logo.svg')
+            }
+        },
+        activities: [
+            "create",
+            "captivate",
+            "check"
+        ],
+        uses: [
+            "Presentations",
+            "Notetaking",
+            "Polls",
+            "Feedback"
+        ],
+        submitter: {
+            name: "H Ahuja",
+            title: "TEL Educational Software Development Manager"
+        },
+        videoURL: "https://www.youtube.com/embed/wlrFHJS8aZY",
         framework: {
             enhance: "Import a previous presentation (e.g. PowerPoint) and add some interactive slides that will test student's comprehension during the session.",
             empower: "Introduce students to the Q&A feature. Ask them to pose questions anonymously and vote on which ones they think should be answered first.",

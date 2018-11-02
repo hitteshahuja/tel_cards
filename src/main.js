@@ -38,7 +38,7 @@ cards.forEach(card => {
 const store = new AppStore({
 	cards,
 	currentCard: cards[Math.floor(Math.random() * cards.length)].id,
-	currentPage: 'card',
+	currentPage: 'default',
 })
 
 // Create the app using App as the default template and pass it the store
