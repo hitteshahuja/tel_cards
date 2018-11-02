@@ -3,7 +3,7 @@
 		<div class="card-header" role="navigation">
 			<ul class="nav nav-tabs card-header-tabs justify-content-center ">
 				<li class="nav-item">
-					<a class="nav-link {{ $currentPage === 'default' ? ' show' : ''}}" id="default-tab" href="#appgenerator" on:click="store.set({ currentPage: 'default' })"><i class="fa fa-paperclip" aria-hidden="true"></i></a>
+					<a class="nav-link {{ $currentPage === 'default' ? ' show' : ''}}" id="default-tab" href="#default-tab" on:click="store.set({ currentPage: 'default' })"><i class="fa fa-paperclip" aria-hidden="true"></i></a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link {{ $currentPage === 'card' ? 'active show' : ''}}" id="app-tab" href="#appgenerator" on:click="store.set({ currentPage: 'card' })"><i class="fa fa-magic" aria-hidden="true"></i></a>
