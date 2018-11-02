@@ -20,7 +20,7 @@
 			</ul>
 		</div>
 		<div class="tab-content" id="myTabContent">
-			<div class="tab-pane fade {{ $currentPage === 'default' ? 'active show' : ''}}" id="appgenerator" role="tabpanel" aria-labelledby="app-tab">
+			<div class="tab-pane fade {{ $currentPage === 'default' ? 'active show' : ''}}" id="default" role="tabpanel" aria-labelledby="app-tab">
 				<Default />
 			</div>
 			<div class="tab-pane fade {{ $currentPage === 'card' ? 'active show' : ''}}" id="appgenerator" role="tabpanel" aria-labelledby="app-tab">
