@@ -2,6 +2,9 @@
 	<div class="card-header" role="navigation">
 		<ul class="nav nav-tabs card-header-tabs justify-content-center">
 			<li class="nav-item">
+        		<a class="nav-link {{ $currentPage === 'default' ? 'active' : ''}}" id="default-tab" href="#default" on:click="store.set({ currentPage: 'default' })"><i class="fas fa-paperclip" aria-hidden="true"></i></a>
+        	</li>
+			<li class="nav-item">
 				<a class="nav-link {{ $currentPage === 'card' ? 'active' : ''}}" id="app-tab" href="#appgenerator" on:click="store.set({ currentPage: 'card' })"><i class="fas fa-magic" aria-hidden="true"></i></a>
 			</li>
 			<li class="nav-item">
@@ -30,11 +33,15 @@
 		<div class="tab-pane {{ $currentPage === 'about' ? 'active show' : ''}}" id="about" role="tabpanel" aria-labelledby="about-tab">
 			<About />
 		</div>
+		<div class="tab-pane {{ $currentPage === 'default' ? 'active show' : ''}}" id="default" role="tabpanel" aria-labelledby="default-tab">
+        	<Default />
+        </div>
 	</div>
 </div>
 
 <script>
 	// All the sub-templates
+	import Default from './Default.svelte'
 	import Card from './Card.svelte'
 	import Catalogue from './Catalogue.svelte'
 	import Contribute from './Contribute.svelte'
@@ -49,10 +56,11 @@
 
 		// Expose the templates as components that can be referened in this template
 		components: {
-			Card,
+			Default,
+		    Card,
 			Catalogue,
 			Contribute,
-			About,
+			About
 		},
 
 		// Compute the card object by indexing the currentCard in the cards array
