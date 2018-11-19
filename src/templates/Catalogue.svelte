@@ -8,7 +8,7 @@
             <p>Browse the list or use the dropdown filter to find an application that supports a specific activity.</p>
         </div>
         <div class="dropdown">
-            <select id="filterText" class="btn btn-secondary dropdown-toggle btn-block" on:change="set({ filter: event.target.value })">
+            <select  id="filterText" class="btn btn-secondary dropdown-toggle btn-block" on:change="set({ filter: event.target.value })">
                 <option selected value="all">Find an app to...</option>
                 <option value="create">...create learning resources</option>
                 <option value="connect">...communicate with students electronically</option>
@@ -55,6 +55,10 @@
         // Compute the filteredCards array so that it only contains cards matching the current filter
         computed: {
             filteredCards: ($cards, filter) => {
+                    // Sort by default property
+                $cards.sort(function(x,y){
+                   return (x.default === y.default)? 0 : x? -1 : 1;
+                });
                 if (filter === 'all') return $cards
                 
                 return $cards.filter(card => {
