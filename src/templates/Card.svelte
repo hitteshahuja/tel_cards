@@ -15,8 +15,8 @@
             {{ card.assets.logo.styles }}
         }
     </style>
-    <div class="card-container">
-        <div class="app-card card noborder {{ card.id }}">
+    <div class="card-container" >
+        <div class="app-card card noborder {{ card.id }}" id="{{card.id}}">
             <div class="front face">
                 <div class="cardflipper" role="button" on:click="rotateCard()">
                     <div><i class="fas fa-redo-alt" aria-hidden="true"></i> Flip card</div>
@@ -56,6 +56,16 @@
                             <p class="small"><b>Submitted by</b><br>{{ card.submitter.name }}<span class="submitterschool">&nbsp;| {{ card.submitter.title }}</span></p>
                         </div>
                     </div>
+                    <!-- Share card -->
+                    <div class="submitter">
+                        <div class="submitterimg">
+                            <i class="fa fa-share-alt" aria-hidden="true"></i>
+                        </div>
+                        <div class="submitterinfo">
+                            <a class="share-btn tooltipped tooltipped-n p-2 mb-2 mr-2 float-left" aria-label="This is the tooltip" href="#" data-clipboard-text="Just because you can doesn't mean you should hittesh">Share Card</a>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="nextcard" role="button" on:click="store.loadRandomCard(card.id)">
                     <div><i class="fas fa-magic" aria-hidden="true"></i>&nbsp;&nbsp;Try another app</div>
@@ -111,7 +121,15 @@
 </div> <!-- End of child card container -->
 
 <script>
-    export default {
+import ClipboardJs from 'clipboard'
+
+var clipboard = new ClipboardJs('.share-btn');
+clipboard.on('success', function(e) {
+    // give a 'link copied to clipboard msg'
+
+});
+
+      export default {
         oncreate() {
             // What the currentCard variable for changes
             this.store.observe('currentCard', res => {
