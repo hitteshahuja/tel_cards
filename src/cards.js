@@ -81,6 +81,7 @@ export default [
     {
         id: "medium",
         name: "Medium",
+        default: true,
         url: "https://medium.com/",
         tagline: "A blogging platform that makes writing and sharing posts simple.",
         description: "Medium simplifies the writing process, producing great looking articles that are easily shared online. Become an author or show your appreciation for posts by using the applaud feature. Medium allows anybody to read, write and respond to stories, with licensing options that allow others to remix and reuse your posts. Found an article that needs more discussion? Write a reponse or highlight specific text and add comments inline.",
@@ -354,6 +355,7 @@ export default [
     {
         id: "snagit",
         name: "Snagit",
+        default: true,
         url: "http://www.snagit.com",
         tagline: "Capture screenshots or record video to visually explain anything from your screen.",
         description: "Snagit is an all-in-one tool for image and video capture, making it easy to create a variety of learning resources. For example, produce step-by-step tutorials, short introductory videos or annotated images. Snagit's integrated editor simplifies the process by providing a range of professional markup options.",
@@ -392,6 +394,7 @@ export default [
     {
         id: "socrative",
         name: "Socrative",
+        default: true,
         url: "https://www.socrative.com",
         tagline: "An app that encourages student participation via online polls and quizzes for real time feedback.",
         description: "Engage students with Socrative, an app that helps to build activities that provide feedback as learning happens. Launch pre-prepared quizzes or ask ad-hoc questions to quickly assess students and get immediate insights into their understanding at class, individual or question level. Automatically populated results visualise feedback, either to be shared with the class or collected anonymously by the tutor.",
@@ -432,6 +435,7 @@ export default [
     {
         id: "zeetings",
         name: "Zeetings",
+        default: true,
         url: "https://www.zeetings.com",
         tagline: "Combine slides, multimedia content, polls and Q&A features into interactive presentations.",
         description: "Zeetings helps to create engaging presentations by combining a range of interactive tools into an easy to use interface. Add existing slides or use Zeetings to create brand new presentations, quickly embedding videos, polls and surveys. A Zeeting is interactive, so share with students to receive real time feedback and questions. With in-built analytics, responses are saved automatically to repurpose outside of the classroom.",
