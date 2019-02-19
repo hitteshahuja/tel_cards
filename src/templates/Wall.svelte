@@ -89,10 +89,11 @@
         // Compute the filteredCards array so that it only contains cards matching the current filter
         computed: {
             filteredCards: ($cards, filter) => {
-                console.log(filter)
-
+                    // Sort by default property
+                $cards.sort(function(x,y){
+                   return (x.default === y.default)? 0 : x? -1 : 1;
+                });
                 if (filter === 'all') return $cards
-                
                 return $cards.filter(card => {
                     return card.activities.map(a => a.name).indexOf(filter) !== -1
                 })

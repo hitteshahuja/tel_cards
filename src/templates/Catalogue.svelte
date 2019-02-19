@@ -9,7 +9,7 @@
         </div>
         <div class="dropdown">
             <select  id="filterText" class="btn btn-secondary dropdown-toggle btn-block" on:change="set({ filter: event.target.value })">
-                <option selected value="all">Find an app to...</option>
+                <option selected value="all">Find a case study to...</option>
                 <option value="create">...create learning resources</option>
                 <option value="connect">...communicate with students electronically</option>
                 <option value="collaborate">...act as a platform for collaboration</option>
