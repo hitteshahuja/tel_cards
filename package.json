@@ -6,12 +6,15 @@
   "scripts": {
     "build": "parcel build src/index.html --public-url ./ && yarn copy:iframe_pages",
     "copy:iframe_pages": "cp src/iframe_{index,wall}.html dist/",
-    "start": "parcel src/index.html",
+    "start": "parcel src/index.html --no-cache",
     "deploy": "npm run build && ./deploy.sh"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "clipboard": "^2.0.4",
+    "primer-tooltips": "^2.0.0"
+  },
   "devDependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
