@@ -14,7 +14,9 @@
             </div>
             <p><strong>Alright! </strong>Thanks for making a suggestion. <a href="#" on:click="resetForm()">Click here to make another.</a></p>
         </div>
-        <form id="gform" on:submit="submitForm(event)">
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfmavP82pvKKd-drfGB-ZvPhvkdVrPnDIA2IAVwWZuRdkK8ew/viewform?embedded=true" width="700" height="900" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+
+        <!--<form id="gform" on:submit="submitForm(event)">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="">
@@ -38,7 +40,7 @@
             <button type="submit" class="btn btn-block submitbutton">
                 Submit
             </button>
-        </form>                        
+        </form>-->
     </div>
 </div>
 
