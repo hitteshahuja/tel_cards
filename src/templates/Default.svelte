@@ -5,7 +5,7 @@
                 <i class="far fa-bookmark" aria-hidden="true"></i>
             </div>
             <h4>Case Studies</h4>
-            <p>Case studies go here...</p>
+            <p>This is a collection of cases studies highlighting the use of learning technologies to enhance learning.</p>
         </div>
         <div class="card cataloguepane" data-spy="scroll">
             <div class="front">
