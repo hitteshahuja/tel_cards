@@ -62,7 +62,7 @@
                             <i class="fa fa-share-alt" aria-hidden="true"></i>
                         </div>
                         <div class="submitterinfo">
-                            <a class="share-btn tooltipped tooltipped-n p-2 mb-2 mr-2 float-left" aria-label="This is the tooltip" href="#" data-clipboard-text="Just because you can doesn't mean you should hittesh">Share Card</a>
+                            <a class="share-btn p-2 mb-2 mr-2 float-left" aria-label="This is the tooltip" href="#" data-clipboard-text="http://tel-dev.bath.ac.uk:1234/?card={{card.id}}">Share Card</a>
                         </div>
                     </div>
 
@@ -124,8 +124,14 @@
 import ClipboardJs from 'clipboard'
 
 var clipboard = new ClipboardJs('.share-btn');
+function showTooltip(elem, msg) {
+	elem.setAttribute('class', 'share-btn tooltipped tooltipped-s p-2 mb-2 mr-2 float-left');
+	elem.setAttribute('aria-label', msg);
+}
 clipboard.on('success', function(e) {
+    e.clearSelection();
     // give a 'link copied to clipboard msg'
+    showTooltip(e.trigger, 'Direct embed link copied to clipboard');
 
 });
 
@@ -134,11 +140,6 @@ clipboard.on('success', function(e) {
             // What the currentCard variable for changes
             this.store.observe('currentCard', res => {
                 // Child is positioned absolutely, so this forces container to fill height of child on re-render
-                setTimeout(() => {
-                    $(function () {
-                        $('[data-toggle="tooltip"]').tooltip()
-                    })
-                }, 20)
 
                 // When the current card changes make sure the card is in the unflipped state
                 this.set({ flipped: false })

@@ -5,7 +5,7 @@
                 <i class="far fa-bookmark" aria-hidden="true"></i> 
             </div>
             <h4>Catalogue</h4>
-            <p>Browse the list or use the dropdown filter to find an application that supports a specific activity.</p>
+            <p>Browse the list or use the dropdown filter to find a case study that supports a specific activity.</p>
         </div>
         <div class="dropdown">
             <select  id="filterText" class="btn btn-secondary dropdown-toggle btn-block" on:change="set({ filter: event.target.value })">
@@ -16,8 +16,8 @@
                 <option value="curate">...collect, organise and share content</option>
                 <option value="capture">...record an event or artefact</option>
                 <option value="captivate">...create interactive learning opportunities</option>
-                <option value="check">...gauge students understanding</option>
-                <option value="all">All apps</option>
+                <option value="check">...check students understanding</option>
+                <option value="all">All case studies</option>
             </select>
         </div>
         <div class="card cataloguepane" data-spy="scroll">
