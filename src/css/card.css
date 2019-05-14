@@ -254,6 +254,7 @@ p, h5, h6 {
 
 .usestext p {
     margin-bottom: 10px;
+    /*min-width:800px;*/
 }
 
 /* FLIP */
@@ -303,7 +304,12 @@ p, h5, h6 {
 .back {
     transform: rotateY(180deg);
 }
-.share-btn,.share-btn:hover{
+
+.share-btn, .share-btn:hover {
     color: #ffffff;
     text-decoration: none;
+}
+
+html {
+    overflow-x: hidden;
 }
